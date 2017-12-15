@@ -1,4 +1,7 @@
 img{
     width: 150px;
-    hight:150px;
+    height:150px;
+}
+form{
+	margin: 15px auto;
 }
