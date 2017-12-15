@@ -14,13 +14,7 @@
 		<h1>{{message}}</h1>
 		<div>{{error}}</div>
 
-		<form name="searchUser">
-			<input type="search" placeholder="Username to find" data-ng-model="username" />
-			<input type="submit" value="Search" />
-		</form>
-		<div ng-if="username.length > 0">
-			<h4>Search for {{username}}</h4>
-		</div>
+
 		<div>
 			<div>First name: {{person.firstName}}</div>
 			<div>Last name: {{person.lastName}}</div>
@@ -28,33 +22,54 @@
 				<img data-ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}">
 			</div>
 		</div>
-	</div>
-	<br/>
-	<div data-ng-controller="MyControllerTestingGET">
-		<h3>{{title}}</h3>
-		<div>
-			<!--user 1-->
-			<div>User 1</div>
-			<div>Name: {{user.name}}</div>
-			<div>
-				<img data-ng-src="{{user.avatar_url}}" title="{{user.name}}">
+		<br/>
+		<!--		inner controller-->
+		<div data-ng-controller="MyControllerTestingGET">
+
+			<form name="searchUser" data-ng-submit="search(username)">
+				<input type="search" placeholder="Username to find" data-ng-model="username" />
+				<input type="submit" value="Search" />
+			</form>
+			<div data-ng-if="username.length > 0">
+				<p>Search for {{username}}</p>
 			</div>
-			<br/>
-			<!--User 2-->
-			<div>User 2</div>
-			<div>Name: {{user2.name}}</div>
-			<div>
-				<img data-ng-src="{{user2.avatar_url}}" title="{{user2.name}}">
+			<div data-ng-if="!showSearchResult">
+				<h3>{{title}}</h3>
+				<div>
+					<!--user 1-->
+					<div>User 1</div>
+					<div>Name: {{user.name}}</div>
+					<div>
+						<img data-ng-src="{{user.avatar_url}}" title="{{user.name}}">
+					</div>
+					<br/>
+					<!--User 2-->
+					<div>User 2</div>
+					<div>Name: {{user2.name}}</div>
+					<div>
+						<img data-ng-src="{{user2.avatar_url}}" title="{{user2.name}}">
+					</div>
+					<br/>
+					<!--User 3-->
+					<div>{{error}}</div>
+					<div>User 3</div>
+					<div>Name: {{user3.name}}</div>
+					<div>
+						<img data-ng-src="{{user3.avatar_url}}" title="{{user3.name}}">
+					</div>
+				</div>
 			</div>
-			<br/>
-			<!--User 3-->
-			<div>{{error}}</div>
-			<div>User 3</div>
-			<div>Name: {{user3.name}}</div>
-			<div>
-				<img data-ng-src="{{user3.avatar_url}}" title="{{user3.name}}">
+
+			<div data-ng-if="showSearchResult">
+				<div data-ng-if="showError">
+					<h2 class="error">{{error}}</h2>
+				</div>
+				<h2>{{foundUser.name}}</h2>
+				<img data-ng-src="{{foundUser.avatar_url}}" title="{{foundUser.name}}">
 			</div>
+
 		</div>
+
 	</div>
 </body>
 

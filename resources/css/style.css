@@ -5,3 +5,7 @@ img{
 form{
 	margin: 15px auto;
 }
+.error{
+	color: red;
+	font-style: oblique;
+}
