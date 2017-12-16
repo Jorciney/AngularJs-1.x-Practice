@@ -9,3 +9,6 @@ form{
 	color: red;
 	font-style: oblique;
 }
+td{
+    padding: 5px 15px;
+}
