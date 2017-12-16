@@ -60,17 +60,20 @@ myApp.controller('MyControllerTestingGET', ['$scope', '$http', function ($scope,
     };
     var onRepository = function (response) {
         $scope.repositories = response.data;
-        // angular.forEach(repositories, getCommitCount(repo));
+        //loop over each repository
+        angular.forEach($scope.repositories, function(item, index) {
+            console.log(item, index);
+            //defining the map object
+            $scope.myCommits = {};
+            $http.get('https://api.github.com/repos/' + item.full_name + '/commits').then(
+                function (response) {
+                    //key value map
+                    $scope.myCommits[item.full_name]=response.data;
+                }, function (reason) {  }
+            );
+        });
     };
 
-    // var getCommitCount = function (repo) {
-    //     $scope.myArrayOfCommits = [];
-    //     $http.get(repo.commits_url).then(
-    //         function (response) {
-    //             $scope.myArrayOfCommits.push(response.data);
-    //         }, function (reason) {  }
-    //     );
-    // };
     var onSearchError = function (reason) {
         $scope.showError = true;
         $scope.error = 'Could not fetch the data!';

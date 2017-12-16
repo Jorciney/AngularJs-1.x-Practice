@@ -70,7 +70,7 @@
                 <thead>
                     <tr>
                         <td>Name</td>
-                        <!--<td>Commits</td>-->
+                        <td>Commits</td>
                         <td>Stars</td>
                         <td>Language</td>
                         <td>Link</td>
@@ -80,8 +80,8 @@
                 <tbody>
                     <tr ng-repeat="repo in repositories">
                         <td>{{repo.name}}</td>
-                        <!--<td>{{myArrayOfCommits[$index].length}}</td>-->
-                        <td>{{repo.stargazers_count}}</td>
+                        <td>{{myCommits[repo.full_name].length}}</td>
+                        <td>{{repo.stargazers_count | number}}</td>
                         <td>{{repo.language}}</td>
                         <td><a href="{{repo.html_url}}">{{repo.html_url}}</a></td>
                     </tr>
