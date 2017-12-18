@@ -1,6 +1,6 @@
 # AngularJs-1.x-Practice
 
-<img src="/resources/images/home_screenshot_1.png" width="200">
+<img src="/resources/images/home_screenshot_1.png" width="600">
 
 A respository for the usage and practice of angularJs 1.x
 
