@@ -13,6 +13,7 @@
 	<div data-ng-controller="MainController">
 		<h1>{{message}}</h1>
 
+
 		<!--		inner controller-->
 		<div data-ng-controller="MyControllerTestingGET">
 
@@ -58,12 +59,23 @@
 				</div>
 			</div>
 
+
 			<div data-ng-if="showSearchResult">
+
 				<div data-ng-if="showError">
 					<h2 class="error">{{error}}</h2>
 				</div>
 				<h2>{{foundUser.name}}</h2>
-				<img data-ng-src="{{foundUser.avatar_url}}" title="{{foundUser.name}}">
+				<img data-ng-src="{{foundUser.avatar_url}}" title="{{foundUser.name}}" />
+				<br>
+
+				<h2>Repositories</h2>
+				<strong>Order:</strong>
+				<select ng-model="repoSortOrder">
+					<option value="+name">Name</option>
+					<option value="-stargazers_count">Stars</option>
+					<option value="+language">Language</option>
+				</select>
 				<table>
 					<thead>
 						<tr>
@@ -74,9 +86,9 @@
 							<td>Link</td>
 						</tr>
 					</thead>
-					<h2>Repositories</h2>
+
 					<tbody>
-						<tr ng-repeat="repo in repositories">
+						<tr ng-repeat="repo in repositories|orderBy:repoSortOrder">
 							<td>{{repo.name}}</td>
 							<td>{{myCommits[repo.full_name].length}}</td>
 							<td>{{repo.stargazers_count | number}}</td>

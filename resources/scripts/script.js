@@ -46,6 +46,7 @@ myApp.controller('MyControllerTestingGET', ['$scope', '$http', function ($scope,
         if (username !== null && username.length > 1) {
             $scope.showSearchResult = true;
             $scope.showError = false;
+			$scope.repoSortOrder = '-stargazers_count';
             $http.get('https://api.github.com/users/' + username)
                 .then(onFoundUser, onSearchError);
         } else
