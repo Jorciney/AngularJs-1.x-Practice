@@ -18,4 +18,6 @@ It will then show that user's github account info(Commits on the master, reposit
   <li>ng-controller</li>
   <li>ng-model</li>
   <li>ng-bind</li>
+  <li>ng-show</li>
+  <li>ng-include</li>
   </ul>
