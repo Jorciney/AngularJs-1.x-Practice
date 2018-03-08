@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<meta charset="UTF-8" />
+	<meta charset="UTF-8"/>
 	<script src="vendors/scripts/angular.min.js"></script>
 	<script src="resources/scripts/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="resources/css/style.css">
@@ -10,58 +10,58 @@
 </head>
 
 <body data-ng-app="myApp">
-	<div data-ng-controller="MainController">
-		<h1>{{message}}</h1>
-		<!--		inner controller-->
-		<div data-ng-controller="MyControllerTestingGET">
+<div data-ng-controller="MainController">
+	<h1>{{message}}</h1>
+	<!--		inner controller-->
+	<div data-ng-controller="MyControllerTestingGET">
 
-			<form name="searchUser" data-ng-submit="search(username)">
-				<input type="search" placeholder="Username to find" data-ng-model="username" />
-				<input type="submit" value="Search" />
-			</form>
-			<div data-ng-if="username.length > 0">
-				<p>Search for {{username}}</p>
-			</div>
-			<div data-ng-if="!showSearchResult">
+		<form name="searchUser" data-ng-submit="search(username)">
+			<input type="search" placeholder="Username to find" data-ng-model="username"/>
+			<input type="submit" value="Search"/>
+		</form>
+		<div data-ng-if="username.length > 0">
+			<p>Search for {{username}}</p>
+		</div>
+		<div data-ng-if="!showSearchResult">
+			<div>
+				<div>First name: {{person.firstName}}</div>
+				<div>Last name: {{person.lastName}}</div>
 				<div>
-					<div>First name: {{person.firstName}}</div>
-					<div>Last name: {{person.lastName}}</div>
-					<div>
-						<img data-ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}">
-					</div>
+					<img data-ng-src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}">
+				</div>
+			</div>
+			<br/>
+			<h3>{{title}}</h3>
+			<div>
+				<!--user 1-->
+				<div>User 1</div>
+				<div>Name: {{user.name}}</div>
+				<div>
+					<img data-ng-src="{{user.avatar_url}}" title="{{user.name}}">
 				</div>
 				<br/>
-				<h3>{{title}}</h3>
+				<!--User 2-->
+				<div>User 2</div>
+				<div>Name: {{user2.name}}</div>
 				<div>
-					<!--user 1-->
-					<div>User 1</div>
-					<div>Name: {{user.name}}</div>
-					<div>
-						<img data-ng-src="{{user.avatar_url}}" title="{{user.name}}">
-					</div>
-					<br/>
-					<!--User 2-->
-					<div>User 2</div>
-					<div>Name: {{user2.name}}</div>
-					<div>
-						<img data-ng-src="{{user2.avatar_url}}" title="{{user2.name}}">
-					</div>
-					<br/>
-					<!--User 3-->
-					<div>{{error}}</div>
-					<div>User 3</div>
-					<div>Name: {{user3.name}}</div>
-					<div>
-						<img data-ng-src="{{user3.avatar_url}}" title="{{user3.name}}">
-					</div>
+					<img data-ng-src="{{user2.avatar_url}}" title="{{user2.name}}">
+				</div>
+				<br/>
+				<!--User 3-->
+				<div>{{error}}</div>
+				<div>User 3</div>
+				<div>Name: {{user3.name}}</div>
+				<div>
+					<img data-ng-src="{{user3.avatar_url}}" title="{{user3.name}}">
 				</div>
 			</div>
-
 		</div>
+
 		<!--here we could use ng-hide or ng-if-->
 		<div data-ng-show="showSearchResult" data-ng-include="'userDetails.html'">
 		</div>
 	</div>
+</div>
 </body>
 
 </html>

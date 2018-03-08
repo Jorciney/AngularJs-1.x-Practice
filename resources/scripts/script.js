@@ -43,10 +43,10 @@ myApp.controller('MyControllerTestingGET', ['$scope', '$http', function ($scope,
 
     //search user
     $scope.search = function (username) {
-        if (username !== null && username.length > 1) {
+        if (username) {
             $scope.showSearchResult = true;
             $scope.showError = false;
-			$scope.repoSortOrder = '-stargazers_count';
+            $scope.repoSortOrder = '-stargazers_count';
             $http.get('https://api.github.com/users/' + username)
                 .then(onFoundUser, onSearchError);
         } else
@@ -62,15 +62,16 @@ myApp.controller('MyControllerTestingGET', ['$scope', '$http', function ($scope,
     var onRepository = function (response) {
         $scope.repositories = response.data;
         //loop over each repository
-        angular.forEach($scope.repositories, function(item, index) {
+        angular.forEach($scope.repositories, function (item, index) {
             console.log(item, index);
             //defining the map object
             $scope.myCommits = {};
             $http.get('https://api.github.com/repos/' + item.full_name + '/commits').then(
                 function (response) {
                     //key value map
-                    $scope.myCommits[item.full_name]=response.data;
-                }, function (reason) {  }
+                    $scope.myCommits[item.full_name] = response.data;
+                }, function (reason) {
+                }
             );
         });
     };
