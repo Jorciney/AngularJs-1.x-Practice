@@ -9,7 +9,7 @@ myApp.controller('MainController', ['$scope', function ($scope) {
         imageSrc: 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAoGAAAAJDA4N2VmMzkzLTBiNWQtNDU2NS1iZDA1LTc4YjkwYzQwMTJkMQ.jpg'
     };
 
-    $scope.message = 'Hello, Angular world!';
+    $scope.message = 'Hello Friend!';
     $scope.person = person;
     $scope.showSearchResult = false;
 

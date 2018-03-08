@@ -8,7 +8,7 @@
 
 	<h2>Repositories</h2>
 	<strong>Order:</strong>
-	<select ng-model="repoSortOrder">
+	<select class="order-selection" ng-model="repoSortOrder">
 					<option value="+name">Name</option>
 					<option value="-stargazers_count">Stars</option>
 					<option value="+language">Language</option>
@@ -30,7 +30,7 @@
 				<td>{{myCommits[repo.full_name].length}}</td>
 				<td>{{repo.stargazers_count | number}}</td>
 				<td>{{repo.language}}</td>
-				<td><a href="{{repo.html_url}}">{{repo.html_url}}</a></td>
+				<td><a class="links" href="{{repo.html_url}}">{{repo.html_url}}</a></td>
 			</tr>
 		</tbody>
 

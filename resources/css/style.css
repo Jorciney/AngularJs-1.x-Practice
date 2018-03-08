@@ -1,3 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    padding:40px;
+    font-family: 'Lato', 'Arial', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    line-height: 1.15 !important;;
+}
+body{
+    color:#fff !important;
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+select , input{
+    color: black !important;
+    border-radius: 20px;
+    height: 30px;
+    text-align: center;
+}
+.links{
+    text-decoration: none;
+}
+
+#search-input{
+    width: 250px;
+}
+button{
+
+}
 img{
     width: 150px;
     height:150px;
@@ -12,3 +49,47 @@ form{
 td{
     padding: 5px 15px;
 }
+
+.btn {
+    display: inline-block;
+    padding: 5px 20px;
+    font-weight: 300 !important;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 200px !important;
+    /*Transition between colors and borders when hovering/clicking on it*/
+    transition: background-color 0.3s, border 0.3s, color 0.3s !important;
+}
+
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color: #61D2B4 !important;
+    border: 1px solid #61D2B4 !important;
+    color: #000;
+    margin-right: 20px;
+    transition: background-color 0.3s, border 0.3s, color 0.3s !important;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    color: #61D2B4 !important;
+    border: 1px solid #61D2B4;
+    transition: all 0.3s, border 0.3s, color 0.3s !important;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #61D2B4 !important;
+    color: #fff !important;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #61D2B4;
+    color: #fff !important;
+    font-weight: 400;
+}
+
+

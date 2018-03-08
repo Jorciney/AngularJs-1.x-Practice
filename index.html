@@ -6,6 +6,9 @@
 	<script src="vendors/scripts/angular.min.js"></script>
 	<script src="resources/scripts/script.js"></script>
 	<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" type="text/css"
+	      rel="stylesheet">
 	<title>My AnjularJs Practice environment </title>
 </head>
 
@@ -16,8 +19,8 @@
 	<div data-ng-controller="MyControllerTestingGET">
 
 		<form name="searchUser" data-ng-submit="search(username)">
-			<input type="search" placeholder="Username to find" data-ng-model="username"/>
-			<input type="submit" value="Search"/>
+			<input type="search" id="search-input" placeholder="Username to find" data-ng-model="username"/>
+			<input class="btn" type="submit" value="Search"/>
 		</form>
 		<div data-ng-if="username.length > 0">
 			<p>Search for {{username}}</p>
